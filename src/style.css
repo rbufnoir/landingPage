@@ -2,6 +2,8 @@
   background-color: #a1dffb; }
   [data-theme="default"] header {
     background-color: #f9de59; }
+    [data-theme="default"] header nav label {
+      border-color: #e8a628; }
   [data-theme="default"] h1, [data-theme="default"] h2 {
     color: #f98365; }
   [data-theme="default"] footer {
@@ -11,6 +13,8 @@
   background-color: #556672; }
   [data-theme="light"] header {
     background-color: #ECECE2; }
+    [data-theme="light"] header nav label {
+      border-color: #756C63; }
   [data-theme="light"] h1, [data-theme="light"] h2 {
     color: #DADEDF; }
   [data-theme="light"] footer {
@@ -20,6 +24,8 @@
   background-color: #349B90; }
   [data-theme="night"] header {
     background-color: #095473; }
+    [data-theme="night"] header nav label {
+      border-color: #5B95AA; }
   [data-theme="night"] h1, [data-theme="night"] h2 {
     color: #B9D6BC; }
   [data-theme="night"] footer {
@@ -81,7 +87,6 @@ html body {
           background-color: white;
           border-style: solid;
           border-width: 1px;
-          border-color: black;
           height: auto;
           width: auto; }
         html body header nav fieldset label[for="default"] {

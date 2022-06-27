@@ -12,6 +12,9 @@
 
     header {
       background-color: map-get($value, headerColor);
+      nav label {
+        border-color: map-get($value, primaryColor);
+      }
     }
 
     h1, h2{
@@ -83,7 +86,6 @@ html {
             background-color: white;
             border-style: solid;
             border-width: 1px;
-            border-color: black;
             height: auto;
             width: auto;
           }

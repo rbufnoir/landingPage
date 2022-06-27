@@ -1,0 +1,105 @@
+[data-theme="default"] {
+  background-color: #a1dffb; }
+  [data-theme="default"] header {
+    background-color: #f9de59; }
+  [data-theme="default"] h1, [data-theme="default"] h2 {
+    color: #f98365; }
+  [data-theme="default"] footer {
+    background-color: #c33124; }
+
+[data-theme="light"] {
+  background-color: #556672; }
+  [data-theme="light"] header {
+    background-color: #ECECE2; }
+  [data-theme="light"] h1, [data-theme="light"] h2 {
+    color: #DADEDF; }
+  [data-theme="light"] footer {
+    background-color: #423930; }
+
+[data-theme="night"] {
+  background-color: #349B90; }
+  [data-theme="night"] header {
+    background-color: #095473; }
+  [data-theme="night"] h1, [data-theme="night"] h2 {
+    color: #B9D6BC; }
+  [data-theme="night"] footer {
+    background-color: #F2D2A2; }
+
+html body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  font-family: 'Alegreya', serif; }
+  html body header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    font-size: 1.5em; }
+    html body header ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none; }
+      html body header ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    html body header nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 20px; }
+      html body header nav a {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      html body header nav fieldset {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 9999px;
+        border: 0;
+        display: inline-flex;
+        padding: 0;
+        margin: 0px 10px;
+        min-width: 60px;
+        min-height: 24px; }
+        html body header nav fieldset input[type=radio] {
+          display: none;
+          margin: 0; }
+        html body header nav fieldset input:checked + label {
+          background-color: #357edd;
+          color: #fff; }
+        html body header nav fieldset label {
+          cursor: pointer;
+          padding: 8px 12px;
+          background-color: white;
+          border-style: solid;
+          border-width: 1px;
+          border-color: black;
+          height: auto;
+          width: auto; }
+        html body header nav fieldset label[for="default"] {
+          border-radius: 9999px 0px 0px 9999px; }
+        html body header nav fieldset label[for="night"] {
+          border-radius: 0px 9999px 9999px 0px; }
+  html body main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; }
+    html body main h1 {
+      font-size: 2em; }
+    html body main h2 {
+      font-size: 1.5em; }
+  html body footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px; }
+
+/*# sourceMappingURL=style.css.map */

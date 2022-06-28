@@ -21,7 +21,7 @@
               </g>
             </svg>
         </li>
-        <li><a>ufnoir</a></li>
+        <li>ufnoir</li>
       </ul>
       <nav>
         <a href="mailto:email@example.com"><img src="src/img/mailto.svg" alt="mailto" width="32px" height="32px"></a>
@@ -36,25 +36,39 @@
     </header>
 
     <main class="container">
-        <div class="page page--current">
-          <article>
+        <div class="page page1">
             <h1>Gagnez de nouveaux clients!</h1>
             <h2>Grâce à un site adapté à vos besoins augmentez le nombre de vos clients potentiels</h2>
             <form>
-              <label for="firstname">Prénom</label>
-              <input type="text" name="firstname">
-              <label for="mail">E-mail</label>
-              <input type="email" name="mail">
+              <label for="firstname">Prénom :
+              <input type="text" name="firstname"></label>
+              <label for="mail">E-mail :
+              <input type="email" name="mail"></label>
               <input type="submit" name="submit" value="Envoyer">
             </form>
-          </article>
-          <figure>
             <img src="src/img/foldingArm.png" alt="photo du magnifique développeur">
-            <figcaption>I hate you so much</figcaption>
-          </figure>
         </div>
-        <div class="page">
-          <p>Some fucking tests</p>
+        <div class="page page--current page2">
+          <div class="carousel-container">
+            <div class="slide-container anim">
+              <div class="slide-index">1/4</div>
+              <img class="slide-img" src="src/img/slide1.png">
+            </div>
+            <div class="slide-container anim">
+              <div class="slide-index">2/4</div>
+              <img class="slide-img" src="src/img/slide2.png">
+            </div>
+            <div class="slide-container anim">
+              <div class="slide-index">3/4</div>
+              <img class="slide-img" src="src/img/slide3.png">
+            </div>
+            <div class="slide-container anim">
+              <div class="slide-index">4/4</div>
+              <img class="slide-img" src="src/img/slide4.png">
+            </div>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+          </div>
         </div>
         <div class="page">
           <p>Some other fucking tests</p>
@@ -64,7 +78,7 @@
     <footer>
       <p>Some fucking text de merde</p>
     </footer>
-	<script src="src/script.js"></script>
   <div class="revealer"></div>
+  <script src="src/script.js"></script>
   </body>
 </html>

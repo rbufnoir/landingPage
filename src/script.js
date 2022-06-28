@@ -82,3 +82,47 @@ function animation(direction) {
   layer[0].addEventListener("animationend", removeAnimate);
   layer[0].addEventListener("webkitAnimationEnd", removeAnimate);
 }
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlide(n) {
+  if (n == 1) {
+    for (i = 0; i < 4; i++)
+      document.getElementsByClassName("anim")[i].style.animationName = "animDroite";
+    console.log(n);
+  }
+  else {
+    for (i = 0; i < 4; i++)
+      document.getElementsByClassName("anim")[i].style.animationName = "animGauche";
+    console.log(n);
+
+  }
+  /*const index = slideIndex+n;
+  const test = document.getElementsByClassName("anim")[index];
+  test.addEventListener("animationend", function() {showSlides(index)});*/
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slide-container");
+
+  if (n > slides.length)
+    slideIndex = 1;
+  if (n < 1)
+    slideIndex = slides.length;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+document.getElementsByClassName("prev")[0].addEventListener("click", function() {
+  plusSlide(-1)});
+document.getElementsByClassName("next")[0].addEventListener("click", function() {
+    plusSlide(1)});

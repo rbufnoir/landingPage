@@ -37,6 +37,8 @@ html body {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
   margin: 0;
   font-family: 'Alegreya', serif; }
   html body header {
@@ -45,6 +47,8 @@ html body {
     align-items: center;
     justify-content: space-between;
     align-items: stretch;
+    position: fixed;
+    top: 0;
     width: 100%;
     height: auto;
     font-size: 1.5em; }
@@ -65,7 +69,8 @@ html body {
       html body header nav a {
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        padding: 2px; }
       html body header nav fieldset {
         background-color: rgba(0, 0, 0, 0.1);
         border-radius: 9999px;
@@ -102,9 +107,47 @@ html body {
       font-size: 2em; }
     html body main h2 {
       font-size: 1.5em; }
+    html body main div {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
   html body footer {
     width: 100%;
     position: fixed;
     bottom: 0px; }
+
+.page.page--current {
+  visibility: visible;
+  position: relative; }
+
+.page {
+  visibility: hidden; }
+
+@keyframes animationTop {
+  0% {
+    transform: translate3d(0, 0%, 0); }
+  35%,
+  65% {
+    transform: translate3d(0, 100%, 0); }
+  100% {
+    transform: translate3d(0, 200%, 0); } }
+@keyframes animationBot {
+  0% {
+    transform: translate3d(0, 0%, 0); }
+  35%,
+  65% {
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    transform: translate3d(0, -200%, 0); } }
+.revealer--animate {
+  animation: animationTop 1.5s cubic-bezier(0.2, 1, 0.3, 1); }
+
+.revealer {
+  background-color: #f9de59;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 100%;
+  z-index: 10; }
 
 /*# sourceMappingURL=style.css.map */

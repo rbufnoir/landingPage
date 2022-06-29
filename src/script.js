@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
           case "ArrowDown":
             animation('bottom');
             break;
+            case "ArrowLeft":
+              plusSlide(1);
+              break;
+            case "ArrowRight":
+              plusSlide(-1);
+              break;
         }
         changeTheme();
     });

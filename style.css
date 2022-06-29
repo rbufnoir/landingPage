@@ -1,0 +1,311 @@
+[data-theme=default] {
+  background-color: #a1dffb;
+}
+[data-theme=default] header {
+  background-color: #f9de59;
+}
+[data-theme=default] header nav label {
+  border-color: #e8a628;
+}
+[data-theme=default] h1, [data-theme=default] h2, [data-theme=default] main {
+  color: #f98365;
+}
+[data-theme=default] form input[type=submit] {
+  background-color: #e8a628;
+}
+[data-theme=default] form input[type=submit]:hover, [data-theme=default] form input[type=submit]:active {
+  background-color: #f98365;
+}
+[data-theme=default] footer {
+  background-color: #c33124;
+}
+[data-theme=default] .revealer {
+  background-color: #f9de59;
+}
+
+[data-theme=light] {
+  background-color: #556672;
+}
+[data-theme=light] header {
+  background-color: #ECECE2;
+}
+[data-theme=light] header nav label {
+  border-color: #756C63;
+}
+[data-theme=light] h1, [data-theme=light] h2, [data-theme=light] main {
+  color: #DADEDF;
+}
+[data-theme=light] form input[type=submit] {
+  background-color: #756C63;
+}
+[data-theme=light] form input[type=submit]:hover, [data-theme=light] form input[type=submit]:active {
+  background-color: #DADEDF;
+}
+[data-theme=light] footer {
+  background-color: #423930;
+}
+[data-theme=light] .revealer {
+  background-color: #ECECE2;
+}
+
+[data-theme=night] {
+  background-color: #349B90;
+}
+[data-theme=night] header {
+  background-color: #095473;
+}
+[data-theme=night] header nav label {
+  border-color: #5B95AA;
+}
+[data-theme=night] h1, [data-theme=night] h2, [data-theme=night] main {
+  color: #B9D6BC;
+}
+[data-theme=night] form input[type=submit] {
+  background-color: #5B95AA;
+}
+[data-theme=night] form input[type=submit]:hover, [data-theme=night] form input[type=submit]:active {
+  background-color: #B9D6BC;
+}
+[data-theme=night] footer {
+  background-color: #F2D2A2;
+}
+[data-theme=night] .revealer {
+  background-color: #095473;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+}
+body header {
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  font-size: 24px;
+}
+@media (max-width: 600px) {
+  body header {
+    grid-row: 1/2;
+  }
+}
+body header ul {
+  grid-column: 2/7;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+}
+body header nav {
+  grid-column: 7/12;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+body header nav a {
+  padding: 4px;
+}
+body main {
+  grid-row: 2/10;
+}
+body main .page--current.page1 {
+  height: 100%;
+  display: grid;
+  grid-template: repeat(12, 1fr)/repeat(12, 1fr);
+}
+body main .page--current.page1 h1 {
+  grid-column: 2/12;
+  grid-row: 1/2;
+}
+body main .page--current.page1 h2 {
+  grid-column: 2/12;
+  grid-row: 2/3;
+}
+body main .page--current.page1 form {
+  grid-column: 2/12;
+  grid-row: 4/6;
+}
+body main .page--current.page1 form label {
+  height: auto;
+  padding: 10px 0px;
+}
+body main .page--current.page1 form label input {
+  width: 25%;
+  transition: width 1s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+body main .page--current.page1 form label input:focus {
+  width: 70%;
+}
+body main .page--current.page1 form input[type=submit] {
+  padding: 15px 25px;
+  height: auto;
+  width: 96px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+body main .page--current.page1 form input[type=submit]:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+body main .page--current.page1 img {
+  grid-column: 2/12;
+  grid-row: 6/12;
+  max-width: 100%;
+  height: auto;
+}
+body main .page--current.page2 {
+  display: grid;
+}
+body main .page--current.page2 div .slide-container {
+  display: none;
+}
+body main .page--current.page2 .prev, body main .page--current.page2 .next {
+  cursor: pointer;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.6s ease;
+}
+body footer {
+  grid-row: 11/13;
+}
+
+body main .page--current.page {
+  height: 100%;
+  display: grid;
+  grid-template: repeat(12, 1fr)/repeat(12, 1fr);
+}
+body main .page--current.page .carousel-container {
+  grid-column: 2/12;
+  grid-row: 2/11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .page--current.page .carousel-container .anim {
+  animation-duration: 1s;
+}
+body main .page--current.page .carousel-container .slide-index {
+  position: relative;
+  top: 15px;
+  padding: 15px;
+  color: black;
+}
+body main .page--current.page img {
+  max-width: 100%;
+  height: auto;
+}
+body main .page--current.page .prev {
+  order: -1;
+}
+body main .page--current.page .prev:hover, body main .page--current.page .next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body main .page {
+  display: none;
+}
+
+fieldset {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  border: 0;
+  display: inline-flex;
+  padding: 0;
+  margin: 0px 10px;
+  min-width: 60px;
+  height: 24px;
+}
+fieldset input[type=radio] {
+  display: none;
+  margin: 0;
+}
+fieldset input:checked + label {
+  background-color: #357edd;
+  color: #fff;
+}
+fieldset label {
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  height: auto;
+  width: auto;
+}
+fieldset label[for=default] {
+  border-radius: 9999px 0px 0px 9999px;
+}
+fieldset label[for=night] {
+  border-radius: 0px 9999px 9999px 0px;
+}
+
+@keyframes animationTop {
+  0% {
+    transform: translate3d(0, 0%, 0);
+  }
+  35%, 65% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 200%, 0);
+  }
+}
+@keyframes animationBot {
+  0% {
+    transform: translate3d(0, 0%, 0);
+  }
+  35%, 65% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, -200%, 0);
+  }
+}
+.revealer--animate {
+  animation: animationTop 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.revealer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 100%;
+  z-index: 10;
+}
+
+@keyframes animDroite {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(300%, 0, 0);
+  }
+}
+@keyframes animGauche {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-300%, 0, 0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

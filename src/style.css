@@ -1,5 +1,24 @@
-[data-theme=default] {
+[data-theme=default] body {
   background-color: #a1dffb;
+}
+[data-theme=default] .loader {
+  background-color: #f9de59;
+}
+[data-theme=default] .loader svg {
+  fill: none;
+}
+[data-theme=default] .loader svg g path {
+  stroke-width: 16;
+  stroke: #f98365;
+}
+[data-theme=default] .loader svg .ip-loader-circlebg {
+  stroke-width: 12;
+  stroke: #f98365;
+}
+[data-theme=default] .loader svg #ip-loader-circle {
+  stroke-width: 6;
+  stroke: #e8a628;
+  transition: stroke-dashoffset 0.2s;
 }
 [data-theme=default] header {
   background-color: #f9de59;
@@ -23,8 +42,27 @@
   background-color: #f9de59;
 }
 
-[data-theme=light] {
+[data-theme=light] body {
   background-color: #556672;
+}
+[data-theme=light] .loader {
+  background-color: #ECECE2;
+}
+[data-theme=light] .loader svg {
+  fill: none;
+}
+[data-theme=light] .loader svg g path {
+  stroke-width: 16;
+  stroke: #DADEDF;
+}
+[data-theme=light] .loader svg .ip-loader-circlebg {
+  stroke-width: 12;
+  stroke: #DADEDF;
+}
+[data-theme=light] .loader svg #ip-loader-circle {
+  stroke-width: 6;
+  stroke: #756C63;
+  transition: stroke-dashoffset 0.2s;
 }
 [data-theme=light] header {
   background-color: #ECECE2;
@@ -48,8 +86,27 @@
   background-color: #ECECE2;
 }
 
-[data-theme=night] {
+[data-theme=night] body {
   background-color: #349B90;
+}
+[data-theme=night] .loader {
+  background-color: #095473;
+}
+[data-theme=night] .loader svg {
+  fill: none;
+}
+[data-theme=night] .loader svg g path {
+  stroke-width: 16;
+  stroke: #B9D6BC;
+}
+[data-theme=night] .loader svg .ip-loader-circlebg {
+  stroke-width: 12;
+  stroke: #B9D6BC;
+}
+[data-theme=night] .loader svg #ip-loader-circle {
+  stroke-width: 6;
+  stroke: #5B95AA;
+  transition: stroke-dashoffset 0.2s;
 }
 [data-theme=night] header {
   background-color: #095473;
@@ -84,6 +141,23 @@ body {
   width: 100vw;
   display: grid;
   grid-template-rows: repeat(12, 1fr);
+  visibility: hidden;
+}
+body .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+body .loader #ip-loader-circle {
+  transition: stroke-dashoffset 0.2s;
 }
 body header {
   grid-row: 1/2;

@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementsByName("theme")[2].checked=true;
             break;
           case "ArrowUp":
-            animation('top');
+            slideNavigation('top');
             break;
           case "ArrowDown":
-            animation('bottom');
+            slideNavigation('bottom');
             break;
             case "ArrowLeft":
               plusSlide(1);
@@ -53,40 +53,47 @@ document.addEventListener('wheel', scroll => {
   }
 });
 
-function removeAnimate() {
-  const layer = document.getElementsByClassName("revealer");
-  layer[0].classList.remove('revealer--animate');
-  layer[0].style.bottom = "";
-  layer[0].style.top = "";
-  layer[0].style.animationName = "";
-}
-
-function animation(direction) {
-  const layer = document.getElementsByClassName("revealer");
-
-  if (direction === "top") {
+function shutterAnimationConfig(direction) {
+  if (direction === 'top') {
     document.getElementsByClassName("revealer")[0].style.bottom = "";
     document.getElementsByClassName("revealer")[0].style.top = "100%";
     document.getElementsByClassName("revealer")[0].style.animationName = "animationBot";
-    const page = document.getElementsByClassName("page--current")[0];
-    if (typeof page.previousElementSibling !== 'undifined') {
-      page.previousElementSibling.classList.add("page--current");
-      page.classList.remove("page--current");
-    }
   }
   else {
     document.getElementsByClassName("revealer")[0].style.bottom = "100%";
     document.getElementsByClassName("revealer")[0].style.top = "";
     document.getElementsByClassName("revealer")[0].style.animationName = "animationTop";
-    const page = document.getElementsByClassName("page--current")[0]
-    if (typeof page.nextElementSibling !== 'undifined') {
-      page.nextElementSibling.classList.add("page--current");
-      page.classList.remove("page--current");
-    }
   }
-  layer[0].classList.add('revealer--animate');
-  layer[0].addEventListener("animationend", removeAnimate);
-  layer[0].addEventListener("webkitAnimationEnd", removeAnimate);
+}
+
+function resetShutter(shutter) {
+  shutter.style.bottom = "";
+  shutter.style.top = "";
+  shutter.style.animationName = "";
+  shutter.classList.remove("revealer--animate");
+}
+
+function nextSlide(direction) {
+  const page = document.getElementsByClassName("page--current")[0];
+
+  page.classList.remove("page--current");
+  if (direction === 'top')
+    page.previousElementSibling.classList.add("page--current");
+  else
+    page.nextElementSibling.classList.add("page--current");
+
+}
+
+function slideNavigation(direction) {
+  const page = document.getElementsByClassName("page--current")[0];
+  const shutter = document.getElementsByClassName("revealer")[0];
+
+  if ((direction === 'top' && page.previousElementSibling !== null) || (direction === 'bottom' && page.nextElementSibling !== null)) {
+    shutterAnimationConfig(direction);
+    shutter.classList.add("revealer--animate");
+    shutter.addEventListener("animationend", function () {resetShutter(shutter)});
+    setTimeout(function () {nextSlide(direction)}, 1000);
+  }
 }
 
 var slideIndex = 1;

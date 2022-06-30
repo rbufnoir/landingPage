@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementsByName("theme")[2].checked=true;
             break;
           case "ArrowUp":
-            animation('top');
+            slideNavigation('top');
             break;
           case "ArrowDown":
-            animation('bottom');
+            slideNavigation('bottom');
             break;
             case "ArrowLeft":
               plusSlide(-1);
@@ -53,6 +53,7 @@ document.addEventListener('wheel', scroll => {
   }
 });
 
+<<<<<<< HEAD
 function removeAnimate(layer) {
   layer[0].classList.remove('revealer--animate');
   layer[0].style.bottom = "";
@@ -87,12 +88,22 @@ function animateSlider(direction) {
     document.getElementsByClassName("revealer")[0].style.animationName = "animationBot";
     }
   else if (direction === "bottom"){
+=======
+function shutterAnimationConfig(direction) {
+  if (direction === 'top') {
+    document.getElementsByClassName("revealer")[0].style.bottom = "";
+    document.getElementsByClassName("revealer")[0].style.top = "100%";
+    document.getElementsByClassName("revealer")[0].style.animationName = "animationBot";
+  }
+  else {
+>>>>>>> bosseLeJsConnard
     document.getElementsByClassName("revealer")[0].style.bottom = "100%";
     document.getElementsByClassName("revealer")[0].style.top = "";
     document.getElementsByClassName("revealer")[0].style.animationName = "animationTop";
   }
 }
 
+<<<<<<< HEAD
 function animation(direction) {
   const layer = document.getElementsByClassName("revealer");
   const page = document.getElementsByClassName("page--current")[0];
@@ -103,6 +114,36 @@ function animation(direction) {
   layer[0].classList.add('revealer--animate');
   layer[0].addEventListener("animationend", function () {removeAnimate(layer)});
   layer[0].addEventListener("webkitAnimationEnd", function () {removeAnimate(layer)});
+=======
+function resetShutter(shutter) {
+  shutter.style.bottom = "";
+  shutter.style.top = "";
+  shutter.style.animationName = "";
+  shutter.classList.remove("revealer--animate");
+}
+
+function nextSlide(direction) {
+  const page = document.getElementsByClassName("page--current")[0];
+
+  page.classList.remove("page--current");
+  if (direction === 'top')
+    page.previousElementSibling.classList.add("page--current");
+  else
+    page.nextElementSibling.classList.add("page--current");
+
+}
+
+function slideNavigation(direction) {
+  const page = document.getElementsByClassName("page--current")[0];
+  const shutter = document.getElementsByClassName("revealer")[0];
+
+  if ((direction === 'top' && page.previousElementSibling !== null) || (direction === 'bottom' && page.nextElementSibling !== null)) {
+    shutterAnimationConfig(direction);
+    shutter.classList.add("revealer--animate");
+    shutter.addEventListener("animationend", function () {resetShutter(shutter)});
+    setTimeout(function () {nextSlide(direction)}, 1000);
+  }
+>>>>>>> bosseLeJsConnard
 }
 
 var slideIndex = 1;
